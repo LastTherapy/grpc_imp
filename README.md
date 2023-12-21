@@ -35,17 +35,17 @@
 <h2 id="chapter-iii" >Chapter III</h2>
 <h2 id="intro" >Intro</h2>
 
- &mdash; You wanted to see me, sir?
+ "You wanted to see me, sir?"
 
- &mdash; Yes, Wiggin, we have some work to do. Today I want to teach you how to calibrate our
- battle simulator equipment based on scanners and information reports from battleship commanders.
+ "Yes, Wiggin, we have some work to do. Today I want to teach you how to calibrate our
+ battle simulator equipment based on scanners and information reports from battleship commanders."
 
- &mdash; With all my respect, sir, shouldn't we also invite other members of my squad?
+ "With all my respect, sir, shouldn't we also invite other members of my squad?"
 
- &mdash; This is not a kind of task that requires a lot of people to deal with. Also, as a future
- commander it is necessary for you to know your tooling. Everything clear?
+  "This is not a kind of task that requires a lot of people to deal with. Also, as a future
+ commander it is necessary for you to know your tooling. Everything clear?"
 
- &mdash; Sir, yes, sir!
+ "Sir, yes, sir!"
 
 Ender started to read through the project documentation. It turns out, there is a ton of scanners
 and detectors Federation deployed across the galaxy to monitor various sectors of space and keep
@@ -54,7 +54,7 @@ track of all the spaceships currently going through, both allies and enemies.
 Every spaceship had several characteristics:
 
 - Alignment (Ally/Enemy)
-- Name (can be "Unknown" for enemy ships)
+- Name (can be 'Unknown' for enemy ships)
 - Class, which is one of {Corvette, Frigate, Cruiser, Destroyer, Carrier, Dreadnought}
 - Length in meters
 - Size of the crew
@@ -76,11 +76,11 @@ Even though Ender kinda got used to it already.
 <h2 id="chapter-iv" >Chapter IV</h2>
 <h3 id="exercise-00-kirov-reporting">Exercise 00: Kirov Reporting</h3>
 
-The main protocol used for interspace communication was called "Protobuf 2.0". The entries were
-being sent over the transport called "gRPC". So, this was the first layer Ender had to implement.
+The main protocol used for interspace communication was called 'Protobuf 2.0'. The entries were
+being sent over the transport called 'gRPC'. So, this was the first layer Ender had to implement.
 
 As gRPC is a client-server communication framework, two components had to be implemented - 
-"reporting_server.py" and "reporting_client.py". The server should provide a response-streaming
+'reporting_server.py' and 'reporting_client.py'. The server should provide a response-streaming
 endpoint, where it receives a set of coordinates (Ender was allowed to use [any particular system](https://en.wikipedia.org/wiki/Astronomical_coordinate_systems)
 he likes), and responds with a stream of Spaceship entries.
 
@@ -136,16 +136,16 @@ NOTE: this output here is formatted for readability, your code can still print o
 <h2 id="chapter-v" >Chapter V</h2>
 <h3 id="exercise-01-data-quality">Exercise 01: Data Quality</h3>
 
- &mdash; Sir, can I ask a legitimate question?
+ "Sir, can I ask a legitimate question?"
 
- &mdash; At ease, Wiggin, what do you have there?
+ "At ease, Wiggin, what do you have there?"
 
- &mdash; I think that sending the signal through space is a process that can be prone to errors.
+ "I think that sending the signal through space is a process that can be prone to errors.
  Shouldn't we check that the entries we receive are real and not just some phantoms and
- malformed data?
+ malformed data?"
 
- &mdash; Good thinking, cadet. There is an information about ships' classes in the registry.
- Just drop whatever entries seem to be malformed.
+ "Good thinking, cadet. There is an information about ships' classes in the registry.
+ Just drop whatever entries seem to be malformed."
 
 Ender brough on the screen a list of classes with specific parameters:
 
@@ -161,12 +161,12 @@ Ender brough on the screen a list of classes with specific parameters:
 The boy decided to represent these limitations as Pydantic data types (see Reading section).
 
 That way it will not just be easier to validate incoming data, but also serialization to JSON
-becomes a lot easier. He decided to make another version of the client ("reporting_client_v2.py"),
+becomes a lot easier. He decided to make another version of the client ('reporting_client_v2.py'),
 which will work with the same server. But this time it should validate the stream of Spaceships 
 using Pydantic and filter out those which have some parameters out of bounds, according to the 
 table above. The rest should be printed exactly as in EX00.
 
-Additionally, from the first part Ender already knew that Name could be "Unknown" ONLY for enemy
+Additionally, from the first part Ender already knew that Name could be 'Unknown' ONLY for enemy
 ships.
 
 <h2 id="chapter-vi" >Chapter VI</h2>
@@ -176,7 +176,7 @@ How good are reports if we are not storing them? For the last Storage layer ther
 another representation of a Spaceship, now as an ORM model (or a set of models, he thought, 
 remembering about officers).
 
-Now Ender's project will have to include "reporting_client_v3.py" script which is responsible
+Now Ender's project will have to include 'reporting_client_v3.py' script which is responsible
 for mapping incoming objects to a database via ORM.
 
 The third version of the client should now not only print out filtered list of spaceships, but also
@@ -184,7 +184,7 @@ save them to PostgreSQL database (avoiding storing duplicates, as Name combined 
 officers is a unique combination). It is okay if database and user for PostgreSQL are created
 manually, as long as there is a description in comments/text file in the submitted project.
 
-Another case that colonel asked Ender to implement was searching for "traitors". Sometimes the same
+Another case that colonel asked Ender to implement was searching for 'traitors'. Sometimes the same
 officers (with unique combination of first name, last name and rank) may have been encountered
 both on ally and enemy ships. So, the scan interface in version 3 should look like this (mind the 
 word 'scan'):
