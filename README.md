@@ -70,7 +70,7 @@ And Colonel Graff will be silently watching the boy's actions from the bridge al
 <h2 id="chapter-iv" >Chapter IV</h2>
 <h3 id="exercise-00-kirov-reporting">Exercise 00: Kirov Reporting</h3>
 
-The main protocol used for interspace communication was called 'Protobuf 2.0'. The entries were sent over a transport called 'gRPC'. This was the first layer that Ender had to implement.
+The main protocol used for interspace communication was called 'Protobuf'. The entries were sent over a transport called 'gRPC'. This was the first layer that Ender had to implement.
 
 Since gRPC is a client-server communication framework, two components had to be implemented - 'reporting_server.py' and 'reporting_client.py'. The server should provide a response-streaming endpoint where it receives a set of coordinates (Ender was allowed to use [any particular system](https://en.wikipedia.org/wiki/Astronomical_coordinate_systems) he likes) and responds with a stream of spaceship entries.
 
@@ -159,11 +159,11 @@ The third version of the client should now not only print a filtered list of spa
 
 Another case that Colonel asked Ender to implement was searching for 'traitors'. Sometimes the same officers (with a unique combination of first name, last name and rank) could be found on both allied and enemy ships. So the scan interface in version 3 should look like this (note the word 'scan'):
 
-`~$ ./reporting_client.py scan 17 45 40.0409 −29 00 28.118`
+`~$ ./reporting_client_v3.py scan 17 45 40.0409 −29 00 28.118`
 
 And listing of traitors would be:
 
-`~$ ./reporting_client.py list_traitors`
+`~$ ./reporting_client_v3.py list_traitors`
 
 which should print a list of JSON strings with "traitors'" names:
 
