@@ -2,6 +2,8 @@
 
 ## That Kind of Battle Training
 
+💡 [Tap here](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624) **to leave your feedback on the project**. It's anonymous and will help our team make your educational experience better. We recommend completing the survey immediately after the project.
+
 ## Contents
 
 1. [Chapter I](#chapter-i) \
@@ -183,4 +185,3 @@ OPTIONAL BONUS: Graff also suggested that Ender think about what happens if the 
 [SQLAlchemy](https://docs.sqlalchemy.org/en/14/orm/tutorial.html).
 [Alembic](https://alembic.sqlalchemy.org/en/latest/tutorial.html).
 
-**Please leave your feedback [here](https://forms.gle/xEbk5Q1jZjn3hqci6).**
