@@ -10,9 +10,8 @@ message Coordinates {
     float x = 1;
     float y = 2;
     float z = 3;
-    float x2 = 4;
-    float y2 = 5;
-    float z2 = 6;
+    float t = 4;
+    float e = 5;
 }
 
 enum Alignment {
